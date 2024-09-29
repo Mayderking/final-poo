@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a TecnoProducts</h1>
+    <ul>
+        <li><a href="{% url 'listar_productos' %}">Ver Productos</a></li>
+        <li><a href="{% url 'listar_clientes' %}">Ver Clientes</a></li>
+        <li><a href="{% url 'listar_ventas' %}">Ver Ventas</a></li>
+        <li><a href="{% url 'listar_categorias' %}">Ver Categorías</a></li>
+        <li><a href="{% url 'listar_proveedores' %}">ver proveedores</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Categorías</title>
+</head>
+<body>
+    <h1>Lista de Categorías</h1>
+    <a href="{% url 'agregar_categoria' %}">Agregar Categoría</a>
+    <ul>
+        {% for categoria in categorias %}
+        <li>
+            {{ categoria.nombre }}
+            <a href="{% url 'editar_categoria' categoria.pk %}">Editar</a>
+            <form action="{% url 'eliminar_categoria' categoria.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'inicio' %}">Volver al Inicio</a>
+</body>
+</html>

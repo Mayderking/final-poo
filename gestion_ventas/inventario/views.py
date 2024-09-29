@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto, Proveedor, Cliente, Categoria, Venta
 from .forms import ProductoForm, ClienteForm, VentaForm, CategoriaForm, ProveedorForm
-from django.db.models import Q
-from django.core.paginator import Paginator
+from django.utils.dateparse import parse_date
 
 # Create your views here.
 
@@ -118,7 +117,14 @@ def reporte_ventas(request):
     if producto_id:
         ventas = ventas.filter(producto_id=producto_id)
 
-    return render(request, 'reporte_ventas.html', {'ventas': ventas})
+    clientes = Cliente.objects.all()
+    productos = Producto.objects.all()
+
+    return render(request, 'reporte_venta.html', {
+        'ventas': ventas,
+        'clientes': clientes,
+        'productos': productos,
+        })
 
 
 def listar_categorias(request):
