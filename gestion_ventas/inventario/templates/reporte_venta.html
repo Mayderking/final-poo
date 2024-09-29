@@ -63,7 +63,11 @@
   </table>
 
   <br><br>
-  <a href="{% url 'inicio' %}">Volver al inicio</a>
+  <ul>
+    <li><a href="{% url 'exportar_reporte_ventas_csv' %}?fecha_inicio={{ request.GET.fecha_inicio }}&fecha_fin={{ request.GET.fecha_fin }}&cliente_id={{ request.GET.cliente_id }}&producto_id={{ request.GET.producto_id }}">Exportar Reporte a CSV</a></li>
+    <li><a href="{% url 'inicio' %}">Volver al inicio</a></li>
+  </ul>
+
 
 </body>
 </html>

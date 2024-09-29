@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import inicio, listar_productos, detalle_producto, agregar_producto, editar_producto, eliminar_producto, listar_clientes, agregar_cliente, editar_cliente, eliminar_cliente, listar_ventas, agregar_venta, reporte_ventas, listar_categorias, agregar_categoria, editar_categoria, eliminar_categoria, listar_proveedores, agregar_proveedor, editar_proveedor, eliminar_proveedor
+from .views import inicio, listar_productos, detalle_producto, agregar_producto, editar_producto, eliminar_producto, listar_clientes, agregar_cliente, editar_cliente, eliminar_cliente, listar_ventas, agregar_venta, reporte_ventas, exportar_reporte_ventas_csv, listar_categorias, agregar_categoria, editar_categoria, eliminar_categoria, listar_proveedores, agregar_proveedor, editar_proveedor, eliminar_proveedor
 
 urlpatterns = [
     #pagina de inicio
@@ -22,6 +22,7 @@ urlpatterns = [
     path('ventas/', listar_ventas, name='listar_ventas'),
     path('ventas/añadir/', agregar_venta, name='agregar_venta'),
     path('ventas/reporte/', reporte_ventas, name='reporte_ventas'),
+    path('ventas/reporte/exportar/', exportar_reporte_ventas_csv, name='exportar_reporte_ventas_csv'),
 
     #para categorias
     path('categorias/', listar_categorias, name='listar_categorias'),
