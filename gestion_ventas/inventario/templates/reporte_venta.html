@@ -3,6 +3,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporte de Ventas</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
   <h1>Reporte de Ventas</h1>
@@ -65,6 +67,7 @@
   <br><br>
   <ul>
     <li><a href="{% url 'exportar_reporte_ventas_csv' %}?fecha_inicio={{ request.GET.fecha_inicio }}&fecha_fin={{ request.GET.fecha_fin }}&cliente_id={{ request.GET.cliente_id }}&producto_id={{ request.GET.producto_id }}">Exportar Reporte a CSV</a></li>
+    <li><a href="{% url 'listar_ventas' %}">Volver a lista de ventas</a></li>
     <li><a href="{% url 'inicio' %}">Volver al inicio</a></li>
   </ul>
 
